@@ -65,6 +65,10 @@ object Puzzle {
 	*/
 	def newPuzzle: Puzzle = scala.util.Random.shuffle {
 		List(Empty, One, Two, Three, Four, Five, Six, Seven, Eight)
+	}
+
+	// ===========================================
+	// ------------ My code starts here ----------
 
 		// BFS
 		//List(Three, One, Two, Six, Four, Five, Seven, Eight, Empty) // 437 moves ~ 1 seconds
@@ -79,11 +83,8 @@ object Puzzle {
 		//List(Five, Two, Eight, Four, One, Seven, Empty, Three, Six) // 138 moves ~ 1 seconds
 		//List(Empty, Eight, Seven, Four, Three, Six, Two, One, Five) // 336 moves ~ 1 seconds
 		//List(Eight, One, Two, Empty, Four, Three, Seven, Six, Five) // 9!/2 moves ~ 50 minutes - unsolvable
-	}
-
-	// ==========================================
-	// -------------- Your code here ------------
-
+	
+	
 	//1 - depthFirst - DONE
 	def depthFirst(root: Puzzle): (String, Puzzle, List[Puzzle]) = {
 
