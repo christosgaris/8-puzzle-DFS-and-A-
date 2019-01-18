@@ -85,7 +85,7 @@ object Puzzle {
 	// List(Eight, One, Two, Empty, Four, Three, Seven, Six, Five) // 9!/2 moves ~ 50 minutes - unsolvable
 	
 	
-	//1 - DFS
+	// DFS
 	def depthFirst(root: Puzzle): (String, Puzzle, List[Puzzle]) = {
 
 		/* Search if puzzle state is already visited */
@@ -98,9 +98,9 @@ object Puzzle {
 		def newStack(stack: List[Puzzle], visited: List[Puzzle]): List[Puzzle] = stack match {
 			case Nil => Nil
 			case h :: t => if (!checked(h, visited))   /* is the head not visited? */
-						   		h :: t                 /* then return the stack as it is */
-						   else                        /* else find the first unvisited head */
-						   		newStack(t, visited)
+					    h :: t                 /* then return the stack as it is */
+				       else                        /* else find the first unvisited head */
+					    newStack(t, visited)
 		}
 
 		/* Recursive execution */
@@ -121,7 +121,7 @@ object Puzzle {
 			dfs(unfold(root), root :: Nil) /* the first search step */
 	}
 
-	//2 - A*
+	// A*
 	def heuristic(root: Puzzle): (String, Puzzle, List[Puzzle]) = {
 
 		/* Search if puzzle state is already visited */
@@ -134,9 +134,9 @@ object Puzzle {
 		def newStack(stack: List[Puzzle], visited: List[Puzzle]): List[Puzzle] = stack match {
 			case Nil => Nil
 			case h :: t => if (!checked(h, visited))   /* is the head not visited? */
-						   		h :: t                 /* then return the stack as it is */
-						   else                        /* else find the first unvisited head */
-						   		newStack(t, visited)
+			      		    h :: t                 /* then return the stack as it is */
+				       else                        /* else find the first unvisited head */
+					    newStack(t, visited)
 		}
 
 		/* H(n) function */
