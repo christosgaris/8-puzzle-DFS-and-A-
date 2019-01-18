@@ -70,22 +70,22 @@ object Puzzle {
 	// ===========================================
 	// ------------ My code starts here ----------
 
-		// BFS
-		//List(Three, One, Two, Six, Four, Five, Seven, Eight, Empty) // 437 moves ~ 1 seconds
-		//List(One, Eight, Two, Empty, Four, Three, Seven, Six, Five) // 11832 moves ~ 5 seconds
-		//List(Five, Two, Eight, Four, One, Seven, Empty, Three, Six) // 41131 moves ~ 75 seconds
-		//List(Empty, Eight, Seven, Four, Three, Six, Two, One, Five) // 68121 moves ~ 210 seconds
-		//List(Eight, One, Two, Empty, Four, Three, Seven, Six, Five) // 9!/2 moves ~ 50 minutes - unsolvable
+	// DFS
+	// List(Three, One, Two, Six, Four, Five, Seven, Eight, Empty) // 437 moves ~ 1 seconds
+	// List(One, Eight, Two, Empty, Four, Three, Seven, Six, Five) // 11832 moves ~ 5 seconds
+	// List(Five, Two, Eight, Four, One, Seven, Empty, Three, Six) // 41131 moves ~ 75 seconds
+	// List(Empty, Eight, Seven, Four, Three, Six, Two, One, Five) // 68121 moves ~ 210 seconds
+	// List(Eight, One, Two, Empty, Four, Three, Seven, Six, Five) // 9!/2 moves ~ 50 minutes - unsolvable
 
-		// HEURISTIC
-		//List(Three, One, Two, Six, Four, Five, Seven, Eight, Empty) // 376 moves ~ 1 seconds
-		//List(One, Eight, Two, Empty, Four, Three, Seven, Six, Five) // 218 moves ~ 1 seconds
-		//List(Five, Two, Eight, Four, One, Seven, Empty, Three, Six) // 138 moves ~ 1 seconds
-		//List(Empty, Eight, Seven, Four, Three, Six, Two, One, Five) // 336 moves ~ 1 seconds
-		//List(Eight, One, Two, Empty, Four, Three, Seven, Six, Five) // 9!/2 moves ~ 50 minutes - unsolvable
+	// A*
+	// List(Three, One, Two, Six, Four, Five, Seven, Eight, Empty) // 376 moves ~ 1 seconds
+	// List(One, Eight, Two, Empty, Four, Three, Seven, Six, Five) // 218 moves ~ 1 seconds
+	// List(Five, Two, Eight, Four, One, Seven, Empty, Three, Six) // 138 moves ~ 1 seconds
+	// List(Empty, Eight, Seven, Four, Three, Six, Two, One, Five) // 336 moves ~ 1 seconds
+	// List(Eight, One, Two, Empty, Four, Three, Seven, Six, Five) // 9!/2 moves ~ 50 minutes - unsolvable
 	
 	
-	//1 - depthFirst - DONE
+	// DFS
 	def depthFirst(root: Puzzle): (String, Puzzle, List[Puzzle]) = {
 
 		/* Search if puzzle state is already visited */
@@ -121,7 +121,7 @@ object Puzzle {
 			dfs(unfold(root), root :: Nil) /* the first search step */
 	}
 
-	//2 - heuristic - DONE
+	// A*
 	def heuristic(root: Puzzle): (String, Puzzle, List[Puzzle]) = {
 
 		/* Search if puzzle state is already visited */
